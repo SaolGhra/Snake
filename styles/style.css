@@ -63,6 +63,13 @@ canvas {
     background-color: #45a049;
 }
 
+/* Modelling for before and after on mobile */
+
+#gameCanvas {
+    width: 1800px;
+    height: 800px;
+}
+
 /* CSS for modal */
 .modal {
     display: none;

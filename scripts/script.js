@@ -65,6 +65,11 @@ function draw() {
     score++;
     document.getElementById("score").innerText = `Score: ${score}`;
     food = { x: Math.floor(Math.random() * rows) * box, y: Math.floor(Math.random() * cols) * box };
+    if (score % 10 === 0) {
+      document.getElementById("scoreSound").play(); // Play sound at every 10 points
+    } else {
+      document.getElementById("foodSound").play(); // Play food eating sound
+    }
   } else {
     snake.pop();
   }
