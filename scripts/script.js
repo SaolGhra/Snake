@@ -95,3 +95,22 @@ function restartGame() {
 }
 
 game = setInterval(draw, 100);
+
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("controlsModal");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // Show modal on page load
+  modal.style.display = "block";
+
+  // Close modal when clicking on the close button or outside the modal
+  closeBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  });
+});
