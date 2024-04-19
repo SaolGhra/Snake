@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #222;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -64,12 +64,21 @@ canvas {
 }
 
 /* Modelling for before and after on mobile */
-
 #gameCanvas {
-    width: 1800px;
-    height: 800px;
+    width: 100%;
+    height: 100%;
 }
 
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 100%;
+        height: calc(100vw * (800 / 1800));
+        max-height: 90vh;
+        display: block;
+        margin: auto;
+        border: 1px solid #fff;
+    }
+}
 /* CSS for modal */
 .modal {
     display: none;
@@ -78,7 +87,7 @@ canvas {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
     color: var(--isabelline-color-texts);
@@ -118,20 +127,16 @@ canvas {
 /* Adjust text alignment */
 .modal-content p {
     display: flex;
-    align-items: center; /* Align text vertically with images */
+    align-items: center;
 }
 
 /* Add spacing between items */
 .modal-content p img {
-    margin-right: 10px; /* Add spacing between image and text */
-}
-
-.modal-content p span {
-    margin-right: 5px; /* Add spacing between text and comma */
+    margin-right: 10px;
 }
 
 /* Add spacing around strong tags */
 .modal-content p strong {
-    margin-right: 3px; /* Add spacing to the right of the strong tags */
-    margin-left: 3px; /* Add spacing to the left of the strong tags */
+    margin-right: 3px;
+    margin-left: 3px;
 }

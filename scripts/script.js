@@ -1,6 +1,6 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
-const box = 40; // Each cell size for the snake
+const box = 40;
 const rows = canvas.width / box;
 const cols = canvas.height / box;
 
@@ -66,9 +66,9 @@ function draw() {
     document.getElementById("score").innerText = `Score: ${score}`;
     food = { x: Math.floor(Math.random() * rows) * box, y: Math.floor(Math.random() * cols) * box };
     if (score % 10 === 0) {
-      document.getElementById("scoreSound").play(); // Play sound at every 10 points
+      document.getElementById("scoreSound").play();
     } else {
-      document.getElementById("foodSound").play(); // Play food eating sound
+      document.getElementById("foodSound").play();
     }
   } else {
     snake.pop();
