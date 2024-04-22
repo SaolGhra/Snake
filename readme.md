@@ -18,10 +18,6 @@ You can play the game online by visiting [this link](https://www.saolghra.co.uk/
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Star This Repo!
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/SaolGhra/snake)
