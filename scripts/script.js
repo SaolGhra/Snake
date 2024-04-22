@@ -9,6 +9,7 @@ let food = { x: Math.floor(Math.random() * rows) * box, y: Math.floor(Math.rando
 let direction = "RIGHT";
 let score = 0;
 let game;
+let gameOver = false;
 
 const restartBtn = document.getElementById("restartBtn");
 restartBtn.addEventListener("click", restartGame);
@@ -21,6 +22,7 @@ function changeDirection(event) {
   else if ((key === 38 || key === 87) && direction !== "DOWN") direction = "UP";
   else if ((key === 39 || key === 68) && direction !== "LEFT") direction = "RIGHT";
   else if ((key === 40 || key === 83) && direction !== "UP") direction = "DOWN";
+  else if ((key === 82 || key === 114) && gameOver) restartGame(); 
 }
 
 function drawCheckerboard(ctx, width, height) {
@@ -78,6 +80,7 @@ function draw() {
   if (newHead.x < 0 || newHead.x >= canvas.width || newHead.y < 0 || newHead.y >= canvas.height || collision(newHead, snake)) {
     clearInterval(game);
     document.getElementById("gameOver").style.display = "block";
+    gameOver = true;
   }
 
   snake.unshift(newHead);
@@ -97,6 +100,7 @@ function restartGame() {
   document.getElementById("score").innerText = `Score: ${score}`;
   document.getElementById("gameOver").style.display = "none";
   game = setInterval(draw, 100);
+  gameOver = false;
 }
 
 game = setInterval(draw, 100);
